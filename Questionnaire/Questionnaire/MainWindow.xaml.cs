@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using System.Windows;
-using Questionnaire.Models;
-using Questionnaire.Services;
+using Questionnaire.Model;
+using Questionnaire.View;
 
 namespace Questionnaire
 {
@@ -13,15 +13,16 @@ namespace Questionnaire
         public MainWindow()
         {
             InitializeComponent();
-            QuestionnaireService service = new QuestionnaireService();
-            IEnumerable<Item> items = service.GetRandomItems(3, 1);
+        }
 
-            QuestionTextBlock.Visibility = Visibility.Visible;
+        private void StartQuestionnaire_OnClick(object sender, RoutedEventArgs e)
+        {
+            int chosenComplexity = Convert.ToInt32(Complexity.Text);
 
-            foreach (Item item in items)
-            {
-                QuestionTextBlock.Text += item.Question + "\n";
-            }
+            Questions questions = new Questions(chosenComplexity);
+            questions.Show();
+
+            Close();
         }
     }
 }

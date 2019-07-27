@@ -1,4 +1,4 @@
-﻿namespace Questionnaire.Models
+﻿namespace Questionnaire.Model
 {
     public class Option
     {

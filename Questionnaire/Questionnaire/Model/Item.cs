@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Questionnaire.Models
+namespace Questionnaire.Model
 {
     public class Item
     {
@@ -10,9 +10,9 @@ namespace Questionnaire.Models
 
         public Item(int complexity, string question, List<Option> options)
         {
-            this.Complexity = complexity;
+            Complexity = complexity;
             Question = question;
-            this.Options = options;
+            Options = options;
         }
     }
 }

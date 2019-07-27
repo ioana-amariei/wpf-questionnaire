@@ -1,0 +1,32 @@
+﻿<Window x:Class="Questionnaire.View.Result"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Questionnaire.View"
+        mc:Ignorable="d"
+        Title="Result" Height="500" Width="800">
+
+    <StackPanel Orientation="Vertical"
+                Margin="100 100 100 100"
+                Background="AliceBlue">
+
+        <TextBlock Name="FinalResult"
+                   FontSize="18"
+                   FontWeight="Bold"
+                   Padding="3"
+                   Margin="20 50 20 20"
+                   Visibility="Visible" />
+
+        <Button Name="NewTest"
+                Click="NewTest_OnClick"
+                Padding="10"
+                Content="Try new test" Background="CornflowerBlue"
+                FontWeight="DemiBold" 
+                FontSize="16" 
+                Margin="20 50 20 50"
+                Width="150" />
+
+    </StackPanel>
+
+</Window>

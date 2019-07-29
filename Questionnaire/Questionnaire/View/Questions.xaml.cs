@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Windows;
 using Questionnaire.Model;
-using Questionnaire.Services;
+using Questionnaire.ViewModel;
 
 namespace Questionnaire.View
 {
@@ -11,11 +10,9 @@ namespace Questionnaire.View
     /// </summary>
     public partial class Questions : Window
     {
-        private readonly QuestionnaireService _service = new QuestionnaireService();
-        private readonly List<Item> _items = new List<Item>();
-        private const int NumberOfItems = 5;
-        private readonly int _numberOfQuestions = 0;
-        private int _numberOfCorrectAnswers = 0;
+        private readonly QuestionnaireController _controller;
+        private readonly int _numberOfQuestions;
+        private int _numberOfCorrectAnswers;
 
         public Questions()
         {
@@ -24,17 +21,18 @@ namespace Questionnaire.View
 
         public Questions(int complexity)
         {
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
 
-            _items = _service.GetRandomItems(NumberOfItems, complexity).ToList();
-            _numberOfQuestions = _items.Count;
+            _controller = new QuestionnaireController(complexity);
+            _numberOfQuestions = _controller.GetNumberOfItems();
 
             SetNextFields();
         }
 
         private void SetNextFields()
         {
-            Item item = CurrentItem();
+            Item item = _controller.GetCurrentItem();
 
             Question.Text = item.Question;
             List<Option> options = item.Options;
@@ -43,16 +41,12 @@ namespace Questionnaire.View
             OptionThree.Content = options[2].Value;
         }
 
-        private Item CurrentItem()
-        {
-            return _items.FirstOrDefault();
-        }
-
         private void Next_OnClick(object sender, RoutedEventArgs e)
         {
-            if (_items.Count > 1)
+            if (_controller.GetNumberOfItems() > 1)
             {
-                _items.Remove(CurrentItem());
+                Item currentItem = _controller.GetCurrentItem();
+                _controller.Remove(currentItem);
                 SetNextFields();
             }
             else
@@ -66,30 +60,23 @@ namespace Questionnaire.View
 
         private void OptionOne_OnChecked(object sender, RoutedEventArgs e)
         {
-            Item item = CurrentItem();
-            Option option = item.Options[0];
-
-            if (option.Correct)
-            {
-                _numberOfCorrectAnswers++;
-            }
+            UpdateNumberOfCorrectAnswers(0);
         }
 
         private void OptionTwo_OnChecked(object sender, RoutedEventArgs e)
         {
-            Item item = CurrentItem();
-            Option option = item.Options[1];
-
-            if (option.Correct)
-            {
-                _numberOfCorrectAnswers++;
-            }
+            UpdateNumberOfCorrectAnswers(1);
         }
 
         private void OptionThree_OnChecked(object sender, RoutedEventArgs e)
         {
-            Item item = CurrentItem();
-            Option option = item.Options[2];
+            UpdateNumberOfCorrectAnswers(2);
+        }
+
+        private void UpdateNumberOfCorrectAnswers(int optionIndex)
+        {
+            Item item = _controller.GetCurrentItem();
+            Option option = item.Options[optionIndex];
 
             if (option.Correct)
             {

@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Windows;
-using Questionnaire.Model;
-using Questionnaire.View;
 
-namespace Questionnaire
+namespace Questionnaire.View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -12,6 +10,7 @@ namespace Questionnaire
     {
         public MainWindow()
         {
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
         }
 

@@ -1,20 +1,21 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 using Questionnaire.Model;
 
-namespace Questionnaire.Services
+namespace Questionnaire.Service
 {
     public class QuestionnaireService
     {
-        public IEnumerable<Item> GetRandomItems(int n, int complexity)
+        public IEnumerable<Item> GetRandomItems(int complexity)
         {
             IEnumerable<Item> items = GetItemsWithComplexity(complexity);
-            return items.Take(n);
+            return Randomize(items);
         }
-
-        public IEnumerable<Item> GetItemsWithComplexity(int complexity)
+        
+        private IEnumerable<Item> GetItemsWithComplexity(int complexity)
         {
             // https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/linq-to-xml-overview
             var filename = "questions.xml";
@@ -46,12 +47,11 @@ namespace Questionnaire.Services
             return new Option(correct, value);
         }
 
-        /*
-        public static IEnumerable<T> Randomize<T>(this IEnumerable<T> source)
+        // http://www.ookii.org/Blog/randomizing_a_list_with_linq
+        private IEnumerable<T> Randomize<T>(IEnumerable<T> source)
         {
-            Random rnd = new Random();
-            return source.OrderBy<T, int>((item) => rnd.Next());
+            Random random = new Random();
+            return source.OrderBy((item) => random.Next());
         }
-        */
     }
 }

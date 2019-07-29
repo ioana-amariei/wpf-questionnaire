@@ -9,11 +9,13 @@ namespace Questionnaire.View
     {
         public Result()
         {
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
         }
 
         public Result(int correctAnswers, int numberOfQuestions)
         {
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
 
             FinalResult.Text = "You answered correctly to " + correctAnswers +

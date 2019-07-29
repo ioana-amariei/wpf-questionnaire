@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<questionnaire>
+  <item complexity="3">
+    <question>Which of the following operator creates a pointer to a variable in C#?</question>
+    <options>
+      <option>sizeof</option>
+      <option>typeof</option>
+      <option correct="true">*</option>
+    </options>
+  </item>
+  <item complexity="2">
+    <question>Which of the following preprocessor directive allows to create a compound conditional directive, along with #if in C#?</question>
+    <options>
+      <option>define</option>
+      <option correct="true">else</option>
+      <option>if</option>
+    </options>
+  </item>
+  <item complexity="2">
+    <question> Which of the following method copies the actual value of an argument into the formal parameter of the function?</question>
+    <options>
+      <option correct="true">Value parameters</option>
+      <option>Reference parameters</option>
+      <option>Output parameters</option>
+    </options>
+  </item>
+  <item complexity="3">
+    <question>Which of the following operator casts without raising an exception if the cast fails in C#?</question>
+    <options>
+      <option>?:</option>
+      <option>is</option>
+      <option correct="true">as</option>
+    </options>
+  </item>
+  <item complexity="2">
+    <question>The comparison operators can be overloaded.</question>
+    <options>
+      <option correct="true">True</option>
+      <option>False</option>
+      <option>Depends</option>
+    </options>
+  </item>
+  <item complexity="1">
+    <question>Which of the following converts a type to a 16-bit integer in C#?</question>
+    <options>
+      <option>ToDecimal</option>
+      <option correct="true">ToInt16</option>
+      <option>ToDouble</option>
+    </options>
+  </item>
+  <item complexity="1">
+    <question>Function overloading is a kind of static polymorphism.</question>
+    <options>
+      <option correct="true">True</option>
+      <option>False</option>
+      <option>None of the above</option>
+    </options>
+  </item>
+  <item complexity="1">
+    <question>Which of the following preprocessor directive allows you to undefine a symbol in C#?</question>
+    <options>
+      <option>define</option>
+      <option correct="true">undefine</option>
+      <option>region</option>
+    </options>
+  </item>
+  <item complexity="2">
+    <question>Which of the following preprocessor directive allows generating an error from a specific location in your code in C#?</question>
+    <options>
+      <option correct="true">error</option>
+      <option>line</option>
+      <option>region</option>
+    </options>
+  </item>
+  <item complexity="1">
+    <question>Which of the following operator represents a conditional operation in C#?</question>
+    <options>
+      <option>as</option>
+      <option>is</option>
+      <option correct="true">?:</option>
+    </options>
+  </item>
+  <item complexity="2">
+    <question>The System.SystemException class is the base class for all predefined system exception in C#?</question>
+    <options>
+      <option>True</option>
+      <option correct="true">False</option>
+      <option>-</option>
+    </options>
+  </item>
+  <item complexity="3">
+    <question>Which of the following is true about try block in C#?</question>
+    <options>
+      <option>A try block identifies a block of code for which particular exceptions is activated</option>
+      <option>It is followed by one or more catch blocks</option>
+      <option correct="true">Both of the above</option>
+    </options>
+  </item>
+  <item complexity="2">
+    <question>Which of the following is correct about C#?</question>
+    <options>
+      <option>It is component oriented</option>
+      <option>It can be compiled on a variety of computer platforms</option>
+      <option correct="true">All of the above</option>
+    </options>
+  </item>
+  <item complexity="2">
+    <question>Which of the following converts a type to a specified type in C#?</question>
+    <options>
+      <option correct="true">ToType</option>
+      <option>ToSingle</option>
+      <option>ToString</option>
+    </options>
+  </item>
+  <item complexity="2">
+    <question>Which of the following operator casts without raising an exception if the cast fails in C#?</question>
+    <options>
+      <option>?:</option>
+      <option>is</option>
+      <option correct="true">as</option>
+    </options>
+  </item>
+  <item complexity="3">
+    <question>Which of the following method helps in returning more than one value?</question>
+    <options>
+      <option>Value parameters</option>
+      <option  correct="true">Output parameters</option>
+      <option>Reference parameters</option>
+    </options>
+  </item>
+  <item complexity="1">
+    <question>Which of the following access specifier in C# allows a class to hide its member variables and member functions from other functions and objects?</question>
+    <options>
+      <option>Public</option>
+      <option correct="true">Private</option>
+      <option>Internal</option>
+    </options>
+  </item>
+  <item complexity="1">
+    <question>Which of the following is the default access specifier of a class member function?</question>
+    <options>
+      <option>Public</option>
+      <option correct="true">Private</option>
+      <option>Protected</option>
+    </options>
+  </item>
+</questionnaire>

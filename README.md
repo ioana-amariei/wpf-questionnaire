@@ -13,8 +13,10 @@ Quiz Game
 # Architecture 
 ```mermaid
 flowchart
-        Q(Questions) -->|input| QG(Quiz Game)
-        U(User) -->|answer| QG(Quiz Game)
+        Q(Questions in XML format) -->|input| QS(Questions Service)
+        QS(Questions Service) --> QG(Quiz Game)
+        U(User) -->|interact| UI(UI)
+        QG(Quiz Game) --> UI(UI)
     
 ```
 
